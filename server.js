@@ -1,3 +1,4 @@
+// https://jagql.github.io/pages/project_setup/handlers.html
 const jag = require('@jagql/framework');
 
 jag.setConfig({
@@ -16,20 +17,21 @@ jag.authenticate((req, cb) => {
 
 jag.define({
   resource: 'todos',
-
   handlers: new jag.MemoryHandler(),
-
   attributes: {
     title: jag.Joi.string(),
     comments: jag.Joi.string(),
-    status: jag.Joi.string()
+    tags: jag.Joi.string(),
+    dueDate: jag.Joi.string()
   },
   examples: [
     {
-      id: '29937a7c-25b0-4cc5-a8bd-c88b739bd123',
-      title: 'Clean the cat',
-      comments: 'Need to clean that cat',
-      status: 'Not yet done yet'
+      id: 'aab14844-97e7-401c-98c8-0bd5ec922d93',
+      type: 'todos',
+      title: 'The Movie: The Matrix',
+      comments: 'This is a movie you can watch with your eyeballs',
+      tags: 'Cyber, future, black coats, lazerz',
+      dueDate: 'whenevs'
     }
   ]
 });
