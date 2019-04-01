@@ -5,11 +5,11 @@ const mongoHandler = db => ({
   ready: true,
   initialise: () => {},
   close: () => {},
-  find: todosModel.find(db),
-  search: todosModel.search(db),
-  create: todosModel.create(db),
-  delete: todosModel.destroy(db),
-  update: todosModel.update(db)
+  find: todosModel.find,
+  search: todosModel.search,
+  create: todosModel.create,
+  delete: todosModel.destroy,
+  update: todosModel.update
 });
 
 module.exports = mongoHandler;

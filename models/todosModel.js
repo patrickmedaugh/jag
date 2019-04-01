@@ -12,11 +12,11 @@ const Todo = new Schema({
 
 const model = mongoose.model('todos', Todo);
 
-const find = db => async id => await model.findOne({ _id: id }).catch(e => console.log(e));
-const search = db => async query => await model.find(query).catch(e => console.log(e));
-const create = db => async newRecord => await model.create(newRecord).catch(e => console.log(e));
-const destroy = db => async _id => await model.deleteOne({ _id }).catch(e => console.log(e));
-const update = db => async (_id, updates) => await model.updateOne({ _id }, updates).catch(e => console.log(e));
+const find = async id => await model.findOne({ _id: id }).catch(e => console.log(e));
+const search = async query => await model.find(query).catch(e => console.log(e));
+const create = async newRecord => await model.create(newRecord).catch(e => console.log(e));
+const destroy = async _id => await model.deleteOne({ _id }).catch(e => console.log(e));
+const update = async (_id, updates) => await model.updateOne({ _id }, updates).catch(e => console.log(e));
 
 module.exports = {
   model: mongoose.model('todos', Todo),
